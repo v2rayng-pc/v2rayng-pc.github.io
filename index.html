@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ==================== SEO ==================== -->
+<title>Скачать v2rayNG для ПК — бесплатно на Windows и Linux</title>
+<meta name="description" content="v2rayNG для ПК: прямые ссылки на скачивание для Windows 10/11 и Linux. Portable-версия без установки. Поддержка VLESS, Reality, VMess, Trojan, Shadowsocks. Бесплатно, открытый код, без рекламы.">
+<meta name="keywords" content="v2rayng, v2rayng для пк, v2rayng скачать, v2rayng windows, v2rayng portable, v2rayng на компьютер, v2rayng linux, v2rayng бесплатно, скачать v2rayng на русском, vless, vmess, trojan, shadowsocks, прокси клиент для пк">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<!-- ЗАМЕНИТЕ example.com на ваш домен перед публикацией -->
+<link rel="canonical" href="https://example.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="v2rayNG для ПК — скачать бесплатно на Windows и Linux">
+<meta property="og:description" content="Быстрый клиент защищённых соединений для компьютера. VLESS, VMess, Trojan, Shadowsocks. Portable-версия без установки, открытый исходный код.">
+<meta property="og:locale" content="ru_RU">
+<meta name="theme-color" content="#070b09">
+
+<!-- Микроразметка: карточка приложения + FAQ (шанс на расширенный сниппет в поиске) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "v2rayNG для ПК",
+  "operatingSystem": "Windows 10/11, Linux",
+  "applicationCategory": "UtilitiesApplication",
+  "softwareVersion": "1.9.29",
+  "description": "Бесплатный клиент защищённых прокси-соединений для компьютера с поддержкой протоколов VLESS, VMess, Trojan и Shadowsocks. Portable-версия без установки.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Бесплатно ли скачивать v2rayNG для ПК?", "acceptedAnswer": { "@type": "Answer", "text": "Да, v2rayNG распространяется бесплатно по открытой лицензии. Все сборки для Windows и Linux доступны по прямым ссылкам без регистрации." } },
+    { "@type": "Question", "name": "Работает ли v2rayNG на Windows?", "acceptedAnswer": { "@type": "Answer", "text": "Да, версия для ПК поддерживает Windows 10 и 11 (x64 и ARM64), а также Linux. Portable-версия запускается без установки — достаточно распаковать архив." } },
+    { "@type": "Question", "name": "Какие протоколы поддерживает v2rayNG?", "acceptedAnswer": { "@type": "Answer", "text": "VLESS (включая Reality и XTLS), VMess, Trojan и Shadowsocks — всё в одном клиенте." } }
+  ]
+}
+</script>
+
+<!-- Шрифты с кириллицей: Unbounded (заголовки), Golos Text (текст), JetBrains Mono (код) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#070b09;
+  --bg-2:#0a110d;
+  --panel:#0d1512;
+  --panel-2:#111b16;
+  --line:rgba(160,220,190,.13);
+  --line-strong:rgba(160,220,190,.28);
+  --text:#eaf5ef;
+  --muted:#a5bab0;
+  --dim:#7d948a;
+  --accent:#3ef59b;
+  --accent-soft:rgba(62,245,155,.10);
+  --font-head:'Unbounded',sans-serif;
+  --font-body:'Golos Text',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--accent);color:#04150c}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#1c2b24;border-radius:6px}
+::-webkit-scrollbar-thumb:hover{background:#2a4136}
+
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+.ic{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ic-fill{fill:currentColor;stroke:none}
+
+/* ---------- Полоса прогресса чтения ---------- */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:1200}
+
+/* ---------- Шапка ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:1100;
+  height:68px;display:flex;align-items:center;
+  border-bottom:1px solid transparent;
+  transition:background .3s,border-color .3s,backdrop-filter .3s;
+}
+header.scrolled{background:rgba(7,11,9,.82);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;width:100%}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--text)}
+.brand-name{font-family:var(--font-head);font-weight:600;font-size:15px;letter-spacing:.02em}
+.brand-name em{font-style:normal;color:var(--dim);font-family:var(--font-mono);font-size:11px;margin-left:8px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14.5px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  font-family:var(--font-mono);font-size:13px;color:var(--accent);
+  border:1px solid var(--line-strong);padding:8px 18px;border-radius:8px;
+  text-decoration:none;transition:border-color .2s,background .2s;
+}
+.nav-cta:hover{border-color:var(--accent);background:var(--accent-soft)}
+.burger{display:none;background:none;border:1px solid var(--line-strong);border-radius:8px;width:40px;height:40px;color:var(--text);cursor:pointer;align-items:center;justify-content:center}
+.mobile-menu{
+  position:fixed;top:68px;left:0;right:0;z-index:1090;
+  background:rgba(7,11,9,.96);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;padding:10px 24px 22px;
+  opacity:0;transform:translateY(-10px);pointer-events:none;transition:.25s;
+}
+.mobile-menu.open{opacity:1;transform:none;pointer-events:auto}
+.mobile-menu a{color:var(--muted);text-decoration:none;padding:13px 4px;border-bottom:1px solid var(--line);font-size:15px}
+.mobile-menu a:last-child{border-bottom:none;color:var(--accent)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:150px 0 90px;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:180px;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--accent)}
+h1{
+  font-family:var(--font-head);font-weight:800;
+  font-size:clamp(2rem,4.6vw,3.7rem);line-height:1.12;letter-spacing:-.01em;
+  margin-bottom:26px;
+}
+h1 .accent{color:var(--accent)}
+.hero-lead{color:var(--muted);font-size:18px;max-width:520px;margin-bottom:40px}
+.hero-lead b{color:var(--text);font-weight:500}
+.hero-actions{display:flex;align-items:stretch;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:10px 0;font-family:var(--font-mono);font-size:12.5px;color:var(--dim)}
+.hero-facts span{display:flex;align-items:center;gap:8px}
+.hero-facts .ic{width:15px;height:15px;color:var(--accent)}
+.hero-facts i{font-style:normal;color:#28352f;padding:0 14px}
+
+/* ---------- Эффектная рамка с бегущим огоньком ---------- */
+.frame{
+  position:relative;display:inline-block;border-radius:16px;
+  background:var(--line-strong); /* фолбэк, если анимации недоступны */
+  overflow:hidden;isolation:isolate;text-decoration:none;
+}
+.frame::before{
+  content:"";position:absolute;left:50%;top:50%;width:160vmax;height:160vmax;
+  transform:translate(-50%,-50%) rotate(0deg);
+  background:conic-gradient(from 0deg,
+    transparent 0deg 300deg,
+    rgba(62,245,155,.85) 326deg,
+    #dcffe9 340deg,
+    transparent 354deg 360deg);
+  animation:frame-spin 4.5s linear infinite;
+  transition:filter .3s;
+}
+.frame::after{content:"";position:absolute;inset:1px;border-radius:15px;background:var(--panel)}
+.frame:hover::before{filter:brightness(1.7)}
+.frame-slow::before{animation-duration:9s}
+.frame>*{position:relative;z-index:1}
+@keyframes frame-spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+/* Основная кнопка скачивания */
+.btn-main{display:flex;align-items:center;gap:16px;padding:17px 28px;transition:box-shadow .3s}
+.btn-main:hover{box-shadow:0 8px 40px -10px rgba(62,245,155,.35)}
+.btn-main .dl-ic{
+  width:44px;height:44px;border-radius:12px;border:1px solid var(--line-strong);
+  display:flex;align-items:center;justify-content:center;color:var(--accent);
+}
+.btn-main .dl-t{display:flex;flex-direction:column;line-height:1.3}
+.btn-main .dl-t b{font-weight:600;font-size:16.5px}
+.btn-main .dl-t span{font-family:var(--font-mono);font-size:12px;color:var(--dim)}
+
+/* Вторичная кнопка */
+.btn-ghost{
+  display:flex;align-items:center;gap:10px;padding:0 26px;
+  border:1px solid var(--line-strong);border-radius:16px;
+  color:var(--muted);font-size:15px;transition:.25s;text-decoration:none;
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--text);background:var(--accent-soft)}
+
+/* ---------- Живая карточка подключения ---------- */
+.app-card{position:relative;border:1px solid var(--line-strong);border-radius:18px;background:rgba(13,21,18,.72);backdrop-filter:blur(10px);overflow:hidden}
+.ac-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--line)}
+.ac-head .t{display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:12.5px;color:var(--muted)}
+.ac-head .tls{font-family:var(--font-mono);font-size:11px;color:var(--dim);border:1px solid var(--line);padding:3px 9px;border-radius:6px}
+.ac-body{padding:22px 22px 0}
+.status-line{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(62,245,155,.5)}70%{box-shadow:0 0 0 10px rgba(62,245,155,0)}100%{box-shadow:0 0 0 0 rgba(62,245,155,0)}}
+.status-label{font-family:var(--font-mono);font-size:12px;letter-spacing:.18em;color:var(--accent)}
+.status-big{font-family:var(--font-head);font-weight:600;font-size:clamp(1.3rem,2.2vw,1.7rem);margin-bottom:18px}
+.term{
+  font-family:var(--font-mono);font-size:12.5px;line-height:1.9;color:var(--muted);
+  height:150px;overflow:hidden;padding:14px 16px;margin-bottom:18px;
+  border:1px solid var(--line);border-radius:12px;background:rgba(4,8,6,.55);
+}
+.term .pfx{color:var(--accent)}
+.term .ok{color:var(--accent);font-weight:500}
+.cursor{display:inline-block;width:7px;height:13px;background:var(--accent);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.spark-wrap{border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:18px}
+.spark-head{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--font-mono);font-size:11.5px;color:var(--dim);margin-bottom:6px}
+.spark-head b{color:var(--text);font-size:15px;font-weight:500}
+#spark{width:100%;height:54px;display:block}
+.ac-metrics{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--line)}
+.ac-metrics div{padding:14px 10px;text-align:center}
+.ac-metrics div+div{border-left:1px solid var(--line)}
+.ac-metrics .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;margin-bottom:3px}
+.ac-metrics .v{font-family:var(--font-mono);font-size:14px;color:var(--text)}
+
+/* ---------- Бегущая лента протоколов ---------- */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:16px 0;background:var(--bg-2)}
+.marquee-track{display:flex;align-items:center;gap:44px;width:max-content;animation:marq 32s linear infinite}
+.marquee-track span{font-family:var(--font-mono);font-size:13px;letter-spacing:.28em;color:var(--dim);white-space:nowrap}
+.marquee-track i{width:6px;height:6px;background:var(--accent);transform:rotate(45deg);flex:none}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ---------- Секции ---------- */
+section{padding:100px 0;scroll-margin-top:80px}
+section+section{border-top:1px solid var(--line)}
+.sec-label{font-family:var(--font-mono);font-size:12.5px;color:var(--accent);letter-spacing:.2em;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.sec-label::before{content:"";width:26px;height:1px;background:var(--accent)}
+h2{font-family:var(--font-head);font-weight:600;font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.2;margin-bottom:18px}
+.sec-sub{color:var(--muted);max-width:640px;font-size:16.5px}
+
+/* ---------- Возможности: строки вместо карточек ---------- */
+.feat-list{margin-top:56px;border-top:1px solid var(--line)}
+.feat-row{
+  display:grid;grid-template-columns:70px 300px 1fr 30px;gap:26px;align-items:center;
+  padding:26px 18px;border-bottom:1px solid var(--line);transition:background .25s,padding-left .25s;
+}
+.feat-row:hover{background:var(--accent-soft);padding-left:30px}
+.feat-num{font-family:var(--font-mono);font-size:13px;color:var(--dim);transition:color .25s}
+.feat-row:hover .feat-num{color:var(--accent)}
+.feat-name{display:flex;align-items:center;gap:13px;font-weight:600;font-size:16.5px}
+.feat-name .ic{color:var(--accent);width:21px;height:21px}
+.feat-desc{color:var(--muted);font-size:15px}
+.feat-arrow{color:var(--dim);opacity:0;transform:translateX(-8px);transition:.25s}
+.feat-row:hover .feat-arrow{opacity:1;transform:none;color:var(--accent)}
+
+/* ---------- Скачивание ---------- */
+#download .dl-top{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;margin-top:52px}
+.big-dl{min-width:340px}
+.big-dl .btn-main{padding:20px 30px}
+.big-dl .btn-main .dl-ic{width:52px;height:52px}
+.big-dl .btn-main b{font-size:17.5px}
+.dl-note{color:var(--muted);font-size:15px}
+.dl-note .hl{font-family:var(--font-mono);font-size:13px;color:var(--accent);border:1px solid var(--line-strong);border-radius:6px;padding:2px 9px;margin-right:10px}
+.ver-badge{font-family:var(--font-mono);font-size:12.5px;color:var(--accent);display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-strong);border-radius:20px;padding:6px 16px;margin-bottom:14px}
+.ver-badge .dot{width:7px;height:7px}
+
+.rel-table{margin-top:56px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.rel-head,.rel-row{display:grid;grid-template-columns:1.5fr .9fr .7fr .6fr auto;gap:18px;align-items:center;padding:17px 24px}
+.rel-head{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);background:var(--bg-2);border-bottom:1px solid var(--line)}
+.rel-row{border-bottom:1px solid var(--line);transition:background .2s}
+.rel-row:last-child{border-bottom:none}
+.rel-row:hover{background:var(--accent-soft)}
+.rel-os{display:flex;align-items:center;gap:12px;font-weight:500}
+.rel-os .ic{color:var(--accent)}
+.rel-os small{display:block;font-family:var(--font-mono);font-weight:400;font-size:11.5px;color:var(--dim)}
+.rel-row .meta{font-family:var(--font-mono);font-size:13px;color:var(--muted)}
+.btn-sm{font-family:var(--font-mono);font-size:12.5px;color:var(--accent);display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:11px}
+.btn-sm .ic{width:15px;height:15px}
+.reqs{margin-top:26px;font-family:var(--font-mono);font-size:12.5px;color:var(--dim);display:flex;flex-wrap:wrap;gap:8px 0;align-items:center}
+.reqs i{font-style:normal;color:#28352f;padding:0 14px}
+
+/* ---------- Установка ---------- */
+.tabs{display:inline-flex;gap:4px;border:1px solid var(--line-strong);border-radius:12px;padding:4px;margin:44px 0 36px}
+.tab-btn{font-family:var(--font-mono);font-size:13.5px;padding:9px 24px;border-radius:9px;background:none;border:none;color:var(--muted);cursor:pointer;transition:.2s;display:flex;align-items:center;gap:9px}
+.tab-btn .ic{width:16px;height:16px}
+.tab-btn.active{background:var(--accent-soft);color:var(--accent)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.steps{list-style:none;max-width:780px}
+.steps li{position:relative;padding:0 0 34px 64px}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{
+  content:attr(data-n);position:absolute;left:0;top:0;
+  width:40px;height:40px;border-radius:50%;border:1px solid var(--line-strong);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-mono);font-size:13px;color:var(--accent);background:var(--bg);
+}
+.steps li::after{content:"";position:absolute;left:20px;top:44px;bottom:2px;width:1px;background:var(--line)}
+.steps li:last-child::after{display:none}
+.steps b{display:block;font-size:16.5px;font-weight:600;margin:7px 0 6px}
+.steps p{color:var(--muted);font-size:15px}
+.code-line{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  margin-top:12px;padding:12px 16px;border:1px solid var(--line);border-radius:10px;
+  background:rgba(4,8,6,.55);font-family:var(--font-mono);font-size:13px;color:var(--accent);
+  overflow-x:auto;
+}
+.copy-btn{background:none;border:1px solid var(--line-strong);border-radius:7px;color:var(--dim);width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none;transition:.2s}
+.copy-btn:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ---------- FAQ ---------- */
+.faq-list{margin-top:50px;border-top:1px solid var(--line);max-width:860px}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{
+  width:100%;background:none;border:none;color:var(--text);cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  padding:24px 6px;font-family:var(--font-body);font-size:17px;font-weight:500;text-align:left;transition:color .2s;
+}
+.faq-q:hover{color:var(--accent)}
+.faq-q .ic{color:var(--dim);transition:transform .3s}
+.faq-item.open .faq-q .ic{transform:rotate(180deg);color:var(--accent)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{color:var(--muted);padding:0 6px 26px;font-size:15.5px;max-width:740px}
+.faq-a b{color:var(--text);font-weight:500}
+
+/* ---------- Футер ---------- */
+footer{border-top:1px solid var(--line);background:var(--bg-2);padding:64px 0 34px}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.f-desc{color:var(--muted);font-size:14.5px;margin-top:16px;max-width:400px}
+.f-col h4{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:18px}
+.f-col a{display:block;color:var(--muted);text-decoration:none;font-size:14.5px;padding:5px 0;transition:color .2s}
+.f-col a:hover{color:var(--accent)}
+.f-bottom{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--font-mono);font-size:12px;color:var(--dim)}
+.f-disc{font-size:12.5px;color:var(--dim);border:1px solid var(--line);border-radius:12px;padding:14px 18px;line-height:1.7}
+.f-disc b{color:var(--muted)}
+
+/* ---------- Тосты ---------- */
+#toasts{position:fixed;bottom:24px;right:24px;z-index:1300;display:flex;flex-direction:column;gap:10px}
+.toast{
+  background:var(--panel-2);border:1px solid var(--line-strong);border-left:3px solid var(--accent);
+  color:var(--text);padding:14px 20px;border-radius:12px;font-size:14px;max-width:340px;
+  box-shadow:0 12px 40px rgba(0,0,0,.5);
+  opacity:0;transform:translateX(24px);transition:.3s;
+}
+.toast.show{opacity:1;transform:none}
+
+/* ---------- Появление при скролле ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ---------- Адаптив ---------- */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .feat-row{grid-template-columns:50px 1fr;grid-template-rows:auto auto;row-gap:8px}
+  .feat-desc{grid-column:2}
+  .feat-arrow{display:none}
+  .rel-head{display:none}
+  .rel-row{grid-template-columns:1fr auto;grid-template-rows:auto auto;row-gap:6px;padding:18px 20px}
+  .rel-row .meta{grid-column:1;font-size:12px}
+  .rel-row .meta:nth-of-type(2){display:inline}
+  #download .dl-top{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:flex}
+  section{padding:70px 0}
+  .hero{padding:120px 0 70px}
+  .f-grid{grid-template-columns:1fr}
+  .feat-row{padding:22px 8px}
+  .tabs{width:100%}
+  .tab-btn{flex:1;justify-content:center;padding:9px 10px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .marquee-track{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG-спрайт иконок (без внешних зависимостей) -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M12 19h4.5a3.5 3.5 0 0 0 0-7h-8a3.5 3.5 0 0 1 0-7H12"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="14" height="14" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="i-term" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></symbol>
+  <symbol id="i-drive" viewBox="0 0 24 24"><line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14h1M14 20h1M18 18h3v3h-3z"/></symbol>
+  <symbol id="i-windows" viewBox="0 0 24 24"><path d="M0 3.449 9.75 2.1v9.451H0zm10.949-9.602L24 0v11.4H10.949zM0 12.6h9.75v9.451L0 20.699zM10.949 12.6H24V24l-12.9-1.801z" transform="translate(0 1.55) scale(0.92)"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.66.41.36.77 1.05.77 2.13 0 1.54-.01 2.78-.01 3.16 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></symbol>
+</svg>
+
+<div id="progress"></div>
+
+<!-- ==================== Шапка ==================== -->
+<header id="navbar">
+  <div class="container nav">
+    <a href="#" class="brand" aria-label="v2rayNG для ПК — на главную">
+      <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 18 12 5l7 13M5 18h14" stroke="#eaf5ef" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+        <circle cx="5" cy="18" r="2.4" fill="#3ef59b"/>
+        <circle cx="12" cy="5" r="2.4" fill="#3ef59b"/>
+        <circle cx="19" cy="18" r="2.4" fill="#3ef59b"/>
+      </svg>
+      <span class="brand-name">v2rayNG<em>ДЛЯ ПК</em></span>
+    </a>
+    <nav class="nav-links" aria-label="Основная навигация">
+      <a href="#features">Возможности</a>
+      <a href="#download">Скачивание</a>
+      <a href="#install">Установка</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#download" class="nav-cta">Скачать</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Открыть меню">
+      <svg class="ic" id="ic-menu"><use href="#i-menu"/></svg>
+      <svg class="ic" id="ic-close" style="display:none"><use href="#i-x"/></svg>
+    </button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#features">Возможности</a>
+  <a href="#download">Скачивание</a>
+  <a href="#install">Установка</a>
+  <a href="#faq">Вопросы</a>
+  <a href="#download">Скачать v2rayNG</a>
+</div>
+
+<main>
+<!-- ==================== Hero ==================== -->
+<section class="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">v2rayNG · версия для компьютера</div>
+      <h1>v2rayNG <span class="accent">для ПК</span> — быстрый клиент защищённых соединений</h1>
+      <p class="hero-lead">
+        <b>Скачайте v2rayNG на компьютер бесплатно</b>: VLESS, VMess, Trojan и Shadowsocks
+        в одном окне. Portable-версия без установки — прямые ссылки для Windows и Linux,
+        без регистрации, рекламы и лишних шагов.
+      </p>
+      <div class="hero-actions">
+        <!-- ============================================================
+             КНОПКИ СКАЧИВАНИЯ: замените href="#" на прямые ссылки к файлам.
+             Пример: href="https://ваш-сервер.ру/files/v2rayng-portable-x64.zip"
+             ============================================================ -->
+        <a href="https://www.dl.dropboxusercontent.com/scl/fi/6bkyidj98r8rbe5jzwxvu/v2RayTun_Setup.exe?rlkey=tliv19r9p7e8e5qcel85cf4gk&st=hfau087b&dl=0" class="frame btn-main" data-dl>
+          <span class="dl-ic"><svg class="ic"><use href="#i-download"/></svg></span>
+          <span class="dl-t">
+            <b>Скачать для Windows</b>
+            <span>v1.9.29 · portable · x64 · ~26 МБ</span><!-- ОБНОВЛЯЙТЕ ВЕРСИЮ ПРИ РЕЛИЗЕ -->
+          </span>
+        </a>
+        <a href="#download" class="btn-ghost">
+          Все сборки
+          <svg class="ic"><use href="#i-chevron"/></svg>
+        </a>
+      </div>
+      <div class="hero-facts">
+        <span><svg class="ic"><use href="#i-shield"/></svg>Открытый исходный код · MIT</span><i>|</i>
+        <span><svg class="ic"><use href="#i-layers"/></svg>4 протокола</span><i>|</i>
+        <span><svg class="ic"><use href="#i-monitor"/></svg>Windows 10/11 · Linux</span>
+      </div>
+    </div>
+
+    <!-- Живая карточка подключения -->
+    <div class="app-card frame-slow" style="padding:1px" aria-hidden="true">
+      <div style="position:relative;z-index:1;border-radius:17px;overflow:hidden;background:rgba(13,21,18,.85)">
+        <div class="ac-head">
+          <span class="t"><span class="dot"></span>v2rayng-core — туннель активен</span>
+          <span class="tls">TLS 1.3</span>
+        </div>
+        <div class="ac-body">
+          <div class="status-line"><span class="dot"></span><span class="status-label">Соединение защищено</span></div>
+          <div class="status-big">Ваш трафик зашифрован</div>
+          <div class="term" id="term"></div>
+          <div class="spark-wrap">
+            <div class="spark-head"><span>Задержка узла, мс</span><b id="pingVal">—</b></div>
+            <canvas id="spark"></canvas>
+          </div>
+        </div>
+        <div class="ac-metrics">
+          <div><div class="k">Аптайм</div><div class="v" id="uptime">00:00:00</div></div>
+          <div><div class="k">Узлов</div><div class="v">40</div></div>
+          <div><div class="k">Протокол</div><div class="v">VLESS</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Бегущая лента протоколов -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marq">
+    <span>VLESS</span><i></i><span>REALITY</span><i></i><span>XTLS-VISION</span><i></i><span>VMESS</span><i></i><span>TROJAN</span><i></i><span>SHADOWSOCKS</span><i></i><span>WIREGUARD-ROUTING</span><i></i>
+    <span>VLESS</span><i></i><span>REALITY</span><i></i><span>XTLS-VISION</span><i></i><span>VMESS</span><i></i><span>TROJAN</span><i></i><span>SHADOWSOCKS</span><i></i><span>WIREGUARD-ROUTING</span><i></i>
+  </div>
+</div>
+
+<!-- ==================== Возможности ==================== -->
+<section id="features">
+  <div class="container">
+    <div class="sec-label reveal">01 · Возможности</div>
+    <h2 class="reveal">Всё для стабильного защищённого туннеля</h2>
+    <p class="sec-sub reveal">v2rayNG для ПК построен на проверенном ядре v2ray-core и дает контроль над каждым аспектом соединения — от выбора протокола до правил маршрутизации.</p>
+
+    <div class="feat-list reveal">
+      <div class="feat-row">
+        <span class="feat-num">01</span>
+        <span class="feat-name"><svg class="ic"><use href="#i-layers"/></svg>Протоколы нового поколения</span>
+        <span class="feat-desc">VLESS, VMess, Trojan и Shadowsocks в одном клиенте — переключайтесь между серверами без переустановки чего-либо.</span>
+        <svg class="ic feat-arrow"><use href="#i-arrow"/></svg>
+      </div>
+      <div class="feat-row">
+        <span class="feat-num">02</span>
+        <span class="feat-name"><svg class="ic"><use href="#i-zap"/></svg>Reality и XTLS-Vision</span>
+        <span class="feat-desc">Современные транспортные режимы маскируют трафик под обычный HTTPS и устойчивы к активному зондированию.</span>
+        <svg class="ic feat-arrow"><use href="#i-arrow"/></svg>
+      </div>
+      <div class="feat-row">
+        <span class="feat-num">03</span>
+        <span class="feat-name"><svg class="ic"><use href="#i-route"/></svg>Гибкая маршрутизация</span>
+        <span class="feat-desc">Правила по доменам, IP-адресам и гео-базам: решайте сами, какой трафик идет через туннель, а какой — напрямую.</span>
+        <svg class="ic feat-arrow"><use href="#i-arrow"/></svg>
+      </div>
+      <div class="feat-row">
+        <span class="feat-num">04</span>
+        <span class="feat-name"><svg class="ic"><use href="#i-eye-off"/></svg>Ноль телеметрии</span>
+        <span class="feat-desc">Клиент не собирает статистику использования, не отправляет отчеты и не требует аккаунта — ни при установке, ни после.</span>
+        <svg class="ic feat-arrow"><use href="#i-arrow"/></svg>
+      </div>
+      <div class="feat-row">
+        <span class="feat-num">05</span>
+        <span class="feat-name"><svg class="ic"><use href="#i-gauge"/></svg>Легкость и скорость</span>
+        <span class="feat-desc">Нативное приложение с минимальным потреблением ресурсов: работает даже на старых ноутбуках и не заметно в системе.</span>
+        <svg class="ic feat-arrow"><use href="#i-arrow"/></svg>
+      </div>
+      <div class="feat-row">
+        <span class="feat-num">06</span>
+        <span class="feat-name"><svg class="ic"><use href="#i-term"/></svg>Профили в один клик</span>
+        <span class="feat-desc">Импорт конфигураций по ссылке, из буфера обмена или по QR-коду — подключение к новому серверу за секунды.</span>
+        <svg class="ic feat-arrow"><use href="#i-arrow"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Скачивание ==================== -->
+<section id="download">
+  <div class="container">
+    <div class="sec-label reveal">02 · Скачивание</div>
+    <h2 class="reveal">Загрузите v2rayNG для ПК</h2>
+    <p class="sec-sub reveal">Все сборки оригинальные, без модификаций и встроенной рекламы. К каждому релизу прилагается контрольная сумма SHA-256 для проверки целостности файла.</p>
+
+    <div class="dl-top reveal">
+      <div class="big-dl">
+        <a href="https://www.dl.dropboxusercontent.com/scl/fi/6bkyidj98r8rbe5jzwxvu/v2RayTun_Setup.exe?rlkey=tliv19r9p7e8e5qcel85cf4gk&st=hfau087b&dl=0" class="frame btn-main" data-dl>
+          <span class="dl-ic"><svg class="ic"><use href="#i-windows"/></svg></span>
+          <span class="dl-t">
+            <b>Скачать для Windows 10/11</b>
+            <span>portable · x64 · ~26 МБ</span>
+          </span>
+        </a>
+      </div>
+      <div class="dl-note">
+        <span class="hl">Portable</span>
+        Установка не требуется: просто распакуйте архив в любую папку и запустите программу.
+        Подходит для большинства компьютеров с процессором Intel или AMD —
+        и не требует прав администратора.
+      </div>
+    </div>
+
+    <!-- ============================================================
+         ТАБЛИЦА СБОРОК: замените href="#" на прямые ссылки к вашим файлам.
+         ============================================================ -->
+    <div class="rel-table reveal">
+      <div class="rel-head">
+        <span>Платформа</span><span>Архитектура</span><span>Формат</span><span>Размер</span><span></span>
+      </div>
+      <div class="rel-row">
+        <span class="rel-os"><svg class="ic ic-fill"><use href="#i-windows"/></svg><span>Windows 10 / 11<small>portable, без установки</small></span></span>
+        <span class="meta">x64</span><span class="meta">.zip</span><span class="meta">26 МБ</span>
+        <a href="https://www.dl.dropboxusercontent.com/scl/fi/6bkyidj98r8rbe5jzwxvu/v2RayTun_Setup.exe?rlkey=tliv19r9p7e8e5qcel85cf4gk&st=hfau087b&dl=0" class="frame btn-sm" data-dl><svg class="ic"><use href="#i-download"/></svg>Скачать</a>
+      </div>
+      <div class="rel-row">
+        <span class="rel-os"><svg class="ic"><use href="#i-monitor"/></svg><span>Windows 10 / 11<small>portable, устройства на ARM</small></span></span>
+        <span class="meta">ARM64</span><span class="meta">.zip</span><span class="meta">23 МБ</span>
+        <a href="https://www.dl.dropboxusercontent.com/scl/fi/6bkyidj98r8rbe5jzwxvu/v2RayTun_Setup.exe?rlkey=tliv19r9p7e8e5qcel85cf4gk&st=hfau087b&dl=0" class="frame btn-sm" data-dl><svg class="ic"><use href="#i-download"/></svg>Скачать</a>
+      </div>
+      <div class="rel-row">
+        <span class="rel-os"><svg class="ic"><use href="#i-drive"/></svg><span>Linux<small>Debian / Ubuntu / Mint</small></span></span>
+        <span class="meta">x64</span><span class="meta">.deb</span><span class="meta">22 МБ</span>
+        <a href="https://www.dl.dropboxusercontent.com/scl/fi/6bkyidj98r8rbe5jzwxvu/v2RayTun_Setup.exe?rlkey=tliv19r9p7e8e5qcel85cf4gk&st=hfau087b&dl=0" class="frame btn-sm" data-dl><svg class="ic"><use href="#i-download"/></svg>Скачать</a>
+      </div>
+      <div class="rel-row">
+        <span class="rel-os"><svg class="ic"><use href="#i-drive"/></svg><span>Linux<small>любой дистрибутив</small></span></span>
+        <span class="meta">x64</span><span class="meta">.AppImage</span><span class="meta">27 МБ</span>
+        <a href="https://www.dl.dropboxusercontent.com/scl/fi/6bkyidj98r8rbe5jzwxvu/v2RayTun_Setup.exe?rlkey=tliv19r9p7e8e5qcel85cf4gk&st=hfau087b&dl=0" class="frame btn-sm" data-dl><svg class="ic"><use href="#i-download"/></svg>Скачать</a>
+      </div>
+    </div>
+
+    <div class="reqs reveal">
+      <span>Системные требования:</span><i>|</i><span>Windows 10/11 или Linux (glibc 2.31+)</span><i>|</i><span>120 МБ на диске</span><i>|</i><span>2 ГБ ОЗУ</span><i>|</i><span>SHA-256 в каждом релизе</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Установка ==================== -->
+<section id="install">
+  <div class="container">
+    <div class="sec-label reveal">03 · Установка</div>
+    <h2 class="reveal">Настройка занимает пять минут</h2>
+    <p class="sec-sub reveal">Никаких драйверов и сложных конфигов: скачайте v2rayNG на компьютер, импортируйте профиль вашего провайдера — и туннель готов.</p>
+
+    <div class="tabs reveal" role="tablist">
+      <button class="tab-btn active" data-tab="win" role="tab"><svg class="ic ic-fill"><use href="#i-windows"/></svg>Windows</button>
+      <button class="tab-btn" data-tab="lin" role="tab"><svg class="ic"><use href="#i-term"/></svg>Linux</button>
+    </div>
+
+    <div class="tab-panel active reveal" id="tab-win">
+      <ol class="steps">
+        <li data-n="01">
+          <b>Скачайте portable-сборку</b>
+          <p>Выберите архив x64 или ARM64 из таблицы выше и сохраните его на компьютер. Перед запуском сверьте SHA-256 с суммой из релиза.</p>
+        </li>
+        <li data-n="02">
+          <b>Распакуйте архив</b>
+          <p>Установка не требуется: распакуйте скачанный .zip в любую папку (например, C:\v2rayNG) и запустите v2rayng.exe. Права администратора не нужны.</p>
+        </li>
+        <li data-n="03">
+          <b>Импортируйте профиль сервера</b>
+          <p>Вставьте ссылку-подписку из буфера обмена (Ctrl+V в окне программы), отсканируйте QR-код или добавьте сервер вручную.</p>
+        </li>
+        <li data-n="04">
+          <b>Включите туннель</b>
+          <p>Выберите сервер из списка и нажмите «Подключить». При необходимости включите системный прокси в настройках, чтобы трафик всех приложений шел через туннель.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="tab-panel reveal" id="tab-lin">
+      <ol class="steps">
+        <li data-n="01">
+          <b>Скачайте пакет для вашего дистрибутива</b>
+          <p>Для Debian/Ubuntu подходит .deb, для остальных — универсальный .AppImage.</p>
+        </li>
+        <li data-n="02">
+          <b>Установите пакет</b>
+          <div class="code-line"><span>sudo dpkg -i v2rayng_1.9.29_amd64.deb</span><button class="copy-btn" data-copy="sudo dpkg -i v2rayng_1.9.29_amd64.deb" aria-label="Скопировать команду"><svg class="ic" style="width:14px;height:14px"><use href="#i-copy"/></svg></button></div>
+          <p style="margin-top:12px">Либо для AppImage — дайте файлу права на запуск и запустите:</p>
+          <div class="code-line"><span>chmod +x v2rayng.AppImage &amp;&amp; ./v2rayng.AppImage</span><button class="copy-btn" data-copy="chmod +x v2rayng.AppImage && ./v2rayng.AppImage" aria-label="Скопировать команду"><svg class="ic" style="width:14px;height:14px"><use href="#i-copy"/></svg></button></div>
+        </li>
+        <li data-n="03">
+          <b>Импортируйте профиль</b>
+          <p>Добавьте сервер по ссылке-подписке или из буфера обмена — так же, как в Windows-версии.</p>
+        </li>
+        <li data-n="04">
+          <b>Запустите туннель</b>
+          <p>Выберите сервер и нажмите «Подключить». Проверить работу можно, открыв любой сайт в браузере.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-label reveal">04 · Вопросы</div>
+    <h2 class="reveal">Частые вопросы о v2rayNG для ПК</h2>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">Бесплатно ли скачивать v2rayNG для компьютера?<svg class="ic"><use href="#i-chevron"/></svg></button>
+        <div class="faq-a"><p>Да. <b>v2rayNG — свободное ПО с открытым исходным кодом</b>, оно распространяется бесплатно по лицензии MIT. Все сборки для Windows и Linux доступны на этой странице по прямым ссылкам, без регистрации и отправки СМС.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Работает ли v2rayNG на Windows 10 и 11?<svg class="ic"><use href="#i-chevron"/></svg></button>
+        <div class="faq-a"><p>Да, версия для ПК поддерживает <b>Windows 10 и Windows 11</b> — как x64, так и ARM64. Portable-версия запускается <b>без установки</b>: достаточно распаковать архив в любую папку. Также есть сборки для Linux (.deb и .AppImage).</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Чем v2rayNG отличается от других прокси-клиентов?<svg class="ic"><use href="#i-chevron"/></svg></button>
+        <div class="faq-a"><p>В одном клиенте собраны <b>VLESS с Reality и XTLS-Vision, VMess, Trojan и Shadowsocks</b>, плюс гибкие правила маршрутизации. Приложение не требует аккаунта, не показывает рекламу и не отправляет телеметрию, а его код открыт для проверки каждым желающим.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Нужен ли отдельный сервис (VPN-провайдер)?<svg class="ic"><use href="#i-chevron"/></svg></button>
+        <div class="faq-a"><p>v2rayNG — это <b>клиент</b>: само приложение является лишь программой подключения. Для работы ему нужен профиль сервера — обычно его предоставляет оператор сервера в виде ссылки-подписки или QR-кода, которые достаточно импортировать при первом запуске.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Безопасно ли скачивать архив отсюда?<svg class="ic"><use href="#i-chevron"/></svg></button>
+        <div class="faq-a"><p>Мы распространяем только оригинальные, немодифицированные сборки. К каждому релизу приложена <b>контрольная сумма SHA-256</b>: сверьте ее с суммой скачанного архива (команда <span style="font-family:var(--font-mono);font-size:13px">certutil -hashfile файл.zip SHA256</span> в Windows), и вы будете уверены в его целостности.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Потянет ли v2rayNG слабый или старый ноутбук?<svg class="ic"><use href="#i-chevron"/></svg></button>
+        <div class="faq-a"><p>Да. Клиент нативный и очень легкий: достаточно <b>2 ГБ оперативной памяти и 120 МБ на диске</b>. Он почти не влияет на время автономной работы ноутбука и не создает заметной нагрузки на процессор даже при активном туннеле.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ==================== Футер ==================== -->
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#" class="brand" style="text-decoration:none">
+          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 18 12 5l7 13M5 18h14" stroke="#eaf5ef" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+            <circle cx="5" cy="18" r="2.4" fill="#3ef59b"/><circle cx="12" cy="5" r="2.4" fill="#3ef59b"/><circle cx="19" cy="18" r="2.4" fill="#3ef59b"/>
+          </svg>
+          <span class="brand-name">v2rayNG<em>ДЛЯ ПК</em></span>
+        </a>
+        <p class="f-desc">Бесплатный клиент защищённых прокси-соединений для Windows и Linux. Скачивайте оригинальные portable-сборки по прямым ссылкам — быстро, бесплатно и без установки.</p>
+      </div>
+      <div class="f-col">
+        <h4>Разделы</h4>
+        <a href="#features">Возможности</a>
+        <a href="#download">Скачать v2rayNG</a>
+        <a href="#install">Установка</a>
+        <a href="#faq">Частые вопросы</a>
+      </div>
+      <div class="f-col">
+        <h4>Проект</h4>
+        <a href="https://github.com/2dust/v2rayNG" target="_blank" rel="noopener noreferrer">Исходный код на GitHub</a>
+        <a href="https://github.com/2dust/v2rayNG/releases" target="_blank" rel="noopener noreferrer">Официальные релизы</a>
+        <a href="https://www.v2fly.org/" target="_blank" rel="noopener noreferrer">Документация ядра</a>
+      </div>
+    </div>
+    <div class="f-disc">
+      <b>Дисклеймер.</b> v2rayNG — свободное ПО с открытым исходным кодом и не является самостоятельным сервисом. Данный сайт — информационная страница о программе для ПК. Используйте приложение исключительно законными способами и в соответствии с законодательством вашей страны.
+    </div>
+    <div class="f-bottom" style="margin-top:26px">
+      <span>© 2025 · Страница о v2rayNG для ПК</span>
+      <span>vless · vmess · trojan · shadowsocks</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toasts" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- Тосты ---------- */
+var toastBox = document.getElementById('toasts');
+function toast(msg){
+  var t = document.createElement('div');
+  t.className = 'toast';
+  t.textContent = msg;
+  toastBox.appendChild(t);
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ t.classList.add('show'); }); });
+  setTimeout(function(){
+    t.classList.remove('show');
+    setTimeout(function(){ t.remove(); }, 350);
+  }, 3400);
+}
+
+/* ---------- Кнопки скачивания: пока ссылка пуста — показываем уведомление ---------- */
+document.querySelectorAll('a[data-dl]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var h = a.getAttribute('href');
+    if(!h || h === '#'){
+      e.preventDefault();
+      toast('Ссылка на скачивание скоро появится — загляните чуть позже');
+    }
+  });
+});
+
+/* ---------- Шапка и полоса прогресса ---------- */
+var nav = document.getElementById('navbar');
+var progress = document.getElementById('progress');
+function onScroll(){
+  var y = window.scrollY || 0;
+  nav.classList.toggle('scrolled', y > 24);
+  var max = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+/* ---------- Мобильное меню ---------- */
+var burger = document.getElementById('burger');
+var mMenu = document.getElementById('mobileMenu');
+var icMenu = document.getElementById('ic-menu');
+var icClose = document.getElementById('ic-close');
+burger.addEventListener('click', function(){
+  var open = mMenu.classList.toggle('open');
+  icMenu.style.display = open ? 'none' : 'block';
+  icClose.style.display = open ? 'block' : 'none';
+});
+mMenu.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click', function(){
+    mMenu.classList.remove('open');
+    icMenu.style.display = 'block';
+    icClose.style.display = 'none';
+  });
+});
+
+/* ---------- Появление блоков при скролле ---------- */
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); }
+  });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+/* ---------- Сеть узлов на фоне hero ---------- */
+var canvas = document.getElementById('net');
+var ctx = canvas.getContext('2d');
+var W = 0, H = 0, nodes = [], packets = [], mouse = {x:-9999, y:-9999};
+var ACC = '62,245,155';
+
+function resizeNet(){
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  W = canvas.offsetWidth; H = canvas.offsetHeight;
+  canvas.width = W * dpr; canvas.height = H * dpr;
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  var n = Math.max(30, Math.min(110, Math.round(W * H / 15000)));
+  nodes = [];
+  for(var i = 0; i < n; i++){
+    nodes.push({
+      x: Math.random() * W, y: Math.random() * H,
+      vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35,
+      r: 1.2 + Math.random() * 1.4
+    });
+  }
+}
+resizeNet();
+window.addEventListener('resize', resizeNet);
+
+var hero = document.querySelector('.hero');
+hero.addEventListener('mousemove', function(e){
+  var r = canvas.getBoundingClientRect();
+  mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+});
+hero.addEventListener('mouseleave', function(){ mouse.x = -9999; mouse.y = -9999; });
+
+function spawnPacket(){
+  if(packets.length > 7) return;
+  var a = nodes[Math.floor(Math.random() * nodes.length)];
+  var b = null, best = 1e9;
+  for(var i = 0; i < nodes.length; i++){
+    var c = nodes[i];
+    if(c === a) continue;
+    var d = Math.hypot(c.x - a.x, c.y - a.y);
+    if(d < 220 && d < best){ best = d; b = c; }
+  }
+  if(b) packets.push({a:a, b:b, t:0, sp:.012 + Math.random() * .015});
+}
+
+function drawNet(){
+  ctx.clearRect(0, 0, W, H);
+  var LINK = 140;
+  for(var i = 0; i < nodes.length; i++){
+    var n1 = nodes[i];
+    n1.x += n1.vx; n1.y += n1.vy;
+    if(n1.x < 0 || n1.x > W) n1.vx *= -1;
+    if(n1.y < 0 || n1.y > H) n1.vy *= -1;
+    var dm = Math.hypot(n1.x - mouse.x, n1.y - mouse.y);
+    if(dm < 160 && dm > 1){ n1.x += (mouse.x - n1.x) * .004; n1.y += (mouse.y - n1.y) * .004; }
+    for(var j = i + 1; j < nodes.length; j++){
+      var n2 = nodes[j];
+      var d = Math.hypot(n1.x - n2.x, n1.y - n2.y);
+      if(d < LINK){
+        var al = (1 - d / LINK) * .2;
+        ctx.strokeStyle = 'rgba(' + ACC + ',' + al + ')';
+        ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.moveTo(n1.x, n1.y); ctx.lineTo(n2.x, n2.y); ctx.stroke();
+      }
+    }
+    if(dm < 170){
+      ctx.strokeStyle = 'rgba(' + ACC + ',' + (1 - dm / 170) * .45 + ')';
+      ctx.beginPath(); ctx.moveTo(n1.x, n1.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+    }
+  }
+  for(var k = 0; k < nodes.length; k++){
+    var nd = nodes[k];
+    var near = Math.hypot(nd.x - mouse.x, nd.y - mouse.y) < 170;
+    ctx.fillStyle = near ? 'rgba(' + ACC + ',.9)' : 'rgba(' + ACC + ',.4)';
+    ctx.beginPath(); ctx.arc(nd.x, nd.y, near ? nd.r + .8 : nd.r, 0, 6.283); ctx.fill();
+  }
+  for(var p = packets.length - 1; p >= 0; p--){
+    var pk = packets[p];
+    pk.t += pk.sp;
+    if(pk.t >= 1){ packets.splice(p, 1); continue; }
+    var px = pk.a.x + (pk.b.x - pk.a.x) * pk.t;
+    var py = pk.a.y + (pk.b.y - pk.a.y) * pk.t;
+    ctx.fillStyle = 'rgba(220,255,235,.95)';
+    ctx.beginPath(); ctx.arc(px, py, 2.2, 0, 6.283); ctx.fill();
+    ctx.fillStyle = 'rgba(' + ACC + ',.25)';
+    var qx = pk.a.x + (pk.b.x - pk.a.x) * Math.max(0, pk.t - .04);
+    var qy = pk.a.y + (pk.b.y - pk.a.y) * Math.max(0, pk.t - .04);
+    ctx.beginPath(); ctx.arc(qx, qy, 1.6, 0, 6.283); ctx.fill();
+  }
+}
+if(!reduced){
+  setInterval(spawnPacket, 380);
+  (function loop(){ if(!document.hidden) drawNet(); requestAnimationFrame(loop); })();
+} else {
+  drawNet();
+}
+
+/* ---------- Терминал с печатью строк ---------- */
+var term = document.getElementById('term');
+var T_LINES = [
+  {p:'инициализация ядра v2ray-core', s:'OK'},
+  {p:'протокол: VLESS + REALITY', s:'OK'},
+  {p:'шифрование: AES-128-GCM', s:'OK'},
+  {p:'маршрутизация: глобальный режим', s:''},
+  {p:'задержка узла: 21 мс · потери: 0%', s:''},
+  {p:'системный прокси подключён', s:'АКТИВНО'}
+];
+var cur = null;
+function newLine(){
+  cur = document.createElement('div');
+  cur.innerHTML = '<span class="pfx">&gt;&nbsp;</span><span class="txt"></span>';
+  term.appendChild(cur);
+  while(term.children.length > 6) term.removeChild(term.firstChild);
+  return cur.querySelector('.txt');
+}
+function typeLine(idx){
+  if(!T_LINES[idx % T_LINES.length]){
+    setTimeout(function(){ term.innerHTML = ''; typeLine(0); }, 3200);
+    return;
+  }
+  var item = T_LINES[idx % T_LINES.length];
+  var txt = newLine();
+  var c = document.createElement('span'); c.className = 'cursor';
+  cur.appendChild(c);
+  if(reduced){
+    txt.textContent = item.p;
+    if(item.s) txt.innerHTML += ' <span class="ok">' + item.s + '</span>';
+    c.remove(); typeLine(idx + 1); return;
+  }
+  var i = 0;
+  (function tick(){
+    if(i < item.p.length){
+      txt.textContent = item.p.slice(0, ++i);
+      setTimeout(tick, 14 + Math.random() * 26);
+    } else {
+      setTimeout(function(){
+        if(item.s){ var ok = document.createElement('span'); ok.className = 'ok'; ok.textContent = ' ' + item.s; cur.insertBefore(ok, c); }
+        setTimeout(function(){ c.remove(); typeLine(idx + 1); }, 550);
+      }, 350);
+    }
+  })();
+}
+typeLine(0);
+
+/* ---------- Спарклайн задержки (диапазон 15–30 мс) ---------- */
+var spark = document.getElementById('spark');
+var sctx = spark.getContext('2d');
+var pingVal = document.getElementById('pingVal');
+var data = [], tt = 0;
+var PING_MIN = 15, PING_MAX = 30;
+function pingNow(){
+  var base = 22.5 + Math.sin(tt) * 3.5 + (Math.random() - .5) * 8;
+  return Math.max(PING_MIN, Math.min(PING_MAX, Math.round(base)));
+}
+function sparkResize(){
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var w = spark.offsetWidth, h = spark.offsetHeight;
+  spark.width = w * dpr; spark.height = h * dpr;
+  sctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+sparkResize();
+window.addEventListener('resize', sparkResize);
+for(var s = 0; s < 48; s++){ tt += .4; data.push(pingNow()); }
+function drawSpark(){
+  var w = spark.offsetWidth, h = spark.offsetHeight;
+  sctx.clearRect(0, 0, w, h);
+  var min = PING_MIN - 3, max = PING_MAX + 4;
+  sctx.beginPath();
+  data.forEach(function(v, i){
+    var x = (i / (data.length - 1)) * w;
+    var y = h - ((v - min) / (max - min)) * (h - 8) - 4;
+    i === 0 ? sctx.moveTo(x, y) : sctx.lineTo(x, y);
+  });
+  sctx.strokeStyle = '#3ef59b'; sctx.lineWidth = 1.6; sctx.stroke();
+  var lx = w, ly = h - ((data[data.length - 1] - min) / (max - min)) * (h - 8) - 4;
+  sctx.fillStyle = '#dcffe9';
+  sctx.beginPath(); sctx.arc(lx - 1, ly, 2.6, 0, 6.283); sctx.fill();
+}
+function pushPing(){
+  tt += .4;
+  var v = pingNow();
+  data.push(v); if(data.length > 48) data.shift();
+  drawSpark();
+  pingVal.textContent = v + ' мс';
+}
+pushPing();
+if(!reduced) setInterval(pushPing, 900); else drawSpark();
+
+/* ---------- Аптайм ---------- */
+var uptimeEl = document.getElementById('uptime');
+var up = 9645; /* стартовое значение для солидности */
+function fmtUp(){
+  var h = Math.floor(up / 3600), m = Math.floor((up % 3600) / 60), s = up % 60;
+  var p = function(n){ return (n < 10 ? '0' : '') + n; };
+  uptimeEl.textContent = p(h) + ':' + p(m) + ':' + p(s);
+}
+fmtUp();
+setInterval(function(){ up++; fmtUp(); }, 1000);
+
+/* ---------- Табы установки ---------- */
+var tabBtns = document.querySelectorAll('.tab-btn');
+tabBtns.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    tabBtns.forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+/* ---------- Копирование команд ---------- */
+document.querySelectorAll('.copy-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var txt = btn.dataset.copy;
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(function(){ toast('Команда скопирована в буфер обмена'); });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = txt; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); ta.remove();
+      toast('Команда скопирована в буфер обмена');
+    }
+  });
+});
+
+/* ---------- FAQ-аккордеон ---------- */
+document.querySelectorAll('.faq-item').forEach(function(item){
+  var q = item.querySelector('.faq-q');
+  var a = item.querySelector('.faq-a');
+  q.addEventListener('click', function(){
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(o){
+      o.classList.remove('open');
+      o.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+})();
+</script>
+</body>
+</html>
